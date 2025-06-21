@@ -1,0 +1,72 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.ocr-container {
+    position: relative;
+    max-width: 100%;
+    overflow: auto;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+#overlay-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+.highlight-region {
+    transition: all 0.2s ease;
+}
+
+.highlight-region:hover {
+    transform: scale(1.05);
+}
+
+/* Table styling */
+.table {
+    font-size: 0.95rem;
+}
+
+.table th {
+    background-color: #f0f8ff;
+}
+
+.table-responsive {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Loading spinner */
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Card styling */
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: #0d6efd;
+    padding: 1rem;
+}
+
+/* Add some animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.card {
+    animation: fadeIn 0.5s;
+}
+
+#overlay-canvas.interactive {
+    pointer-events: auto;
+}

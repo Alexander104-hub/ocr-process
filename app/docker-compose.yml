@@ -1,0 +1,47 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.app
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./output:/app/output
+    depends_on:
+      - luigi-scheduler
+    environment:
+      - LUIGI_SCHEDULER_HOST=luigi-scheduler
+      - LUIGI_SCHEDULER_PORT=8082
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+
+  luigi-scheduler:
+    build:
+      context: .
+      dockerfile: Dockerfile.luigi-scheduler
+    ports:
+      - "8082:8082"
+    depends_on:
+      - redis
+
+  luigi-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.luigi-worker
+    volumes:
+      - ./uploads:/app/uploads
+      - ./output:/app/output
+    depends_on:
+      - luigi-scheduler
+      - redis
+    environment:
+      - LUIGI_SCHEDULER_HOST=luigi-scheduler
+      - LUIGI_SCHEDULER_PORT=8082
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"

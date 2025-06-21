@@ -1,0 +1,9 @@
+*.pyc
+*.swp
+*.pkl
+*.pth
+result*
+weights*
+.venv
+handwritting/dataset/data
+model

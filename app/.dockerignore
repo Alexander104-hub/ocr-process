@@ -1,0 +1,29 @@
+# IDEs
+.vscode/
+.idea/
+.vs/
+
+# Git
+.git/
+
+# Non-runtime related
+.pre-commit-config.yaml
+.gitlab-ci.yml
+
+# Byte-compiled / optimized / DLL files
+**/__pycache__
+*.py[cod]
+*$py.class
+
+# temp files
+tmp/
+temp/
+
+# virtualenv
+venv/
+.venv/
+ENV/
+
+# Docker
+docker-compose.yml
+docker-compose.override.yml

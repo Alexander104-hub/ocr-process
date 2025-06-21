@@ -1,0 +1,11 @@
+*.pyc
+*.swp
+*.pkl
+*.pth
+result*
+weights*
+.venv
+craft*
+model*
+uploads*
+output*
