@@ -2,7 +2,4 @@
 *.swp
 *.pkl
 *.pth
-result*
-weights*
 .venv
-train_data/*

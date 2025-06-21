@@ -2,16 +2,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('upload-form');
     const loading = document.getElementById('loading');
     const errorDiv = document.getElementById('error');
-    
+
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        
+
         // Show loading spinner
         loading.classList.remove('d-none');
         errorDiv.classList.add('d-none');
-        
+
         const formData = new FormData(form);
-        
+
         fetch('/upload', {
             method: 'POST',
             body: formData
@@ -36,4 +36,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
