@@ -5,4 +5,4 @@
 result*
 weights*
 .venv
-train_data*
+train_data/*
